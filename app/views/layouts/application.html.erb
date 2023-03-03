@@ -9,10 +9,21 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= render "layouts/shim" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <%= yield %>
+    <%= render "layouts/header" %>
+    <div class="container">
+      <%= yield %>
+    </div>
+    <div class=flash> <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+      </div>
   </body>
+  <footer>
+    <%= render "layouts/footer"%>
+  </footer>
 </html>
+
