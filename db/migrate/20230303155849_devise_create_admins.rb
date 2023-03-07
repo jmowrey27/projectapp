@@ -33,7 +33,7 @@ class DeviseCreateAdmins < ActiveRecord::Migration[7.0]
       # t.datetime :locked_at
 
 
-      t.timestamps null: false
+      t.timestamps null: true
     end
 
     add_index :admins, :email,                unique: true
