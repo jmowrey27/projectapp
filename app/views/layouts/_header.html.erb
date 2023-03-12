@@ -6,7 +6,9 @@
         <ul class="nav navbar-nav navbar-right">
 
           <% if admin_signed_in? %>
-            <li><%= button_to "Sign_out", destroy_admin_session_path, :method => 'delete', data:{turbo: "false"} %> </li>
+            <li><%= link_to "Sign out", destroy_admin_session_path, data: { "turbo-method": :delete } %> </li>
+            <li><%= link_to "Pages", 'pages' %> </li>
+            <li><%= link_to "Home", root_path %> </li>
           <% else %>
             <li><%= link_to "Our story", "#" %> </li>
             <li><%= link_to "Shop", "#" %> </li>
