@@ -13,6 +13,10 @@
     @page = Page.find params[:id]
   end
 
+  def show_by_slug
+    @page = Page.find_by(slug: params[:slug])
+    render :show
+  end
   # GET /pages/new
   def new
     @page = Page.new
