@@ -1,5 +1,7 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @page %>
-
-
+<% if @page %>
+  <%= render @page %>
+<% else %>
+  <p>The requested page could not be found.</p>
+<% end %>
