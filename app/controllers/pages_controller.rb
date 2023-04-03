@@ -1,4 +1,5 @@
 
+
   class PagesController < ApplicationController
   before_action :set_page, only: %i[ show edit update destroy ]
 
@@ -9,6 +10,7 @@
 
   # GET /pages/1 or /pages/1.json
   def show
+    @page = Page.find params[:id]
   end
 
   # GET /pages/new
@@ -66,7 +68,7 @@
 
     # Only allow a list of trusted parameters through.
     def page_params
-      params.require(:page).permit(:title, :body, :slug)
+      params.require(:page).permit(:title, :body, :slug, :category_id)
     end
   end
 

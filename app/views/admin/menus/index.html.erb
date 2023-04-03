@@ -1,0 +1,24 @@
+<h1>Menus</h1>
+<div id="menus">
+<% @menus.each do |menu| %>
+
+    <div>
+     <li> <%= menu.name %>
+    
+        <ul> <% menu.menu_items.each do |item| %> 
+            <li> <% is_external_url = url_for_menu_item(item).match(/:\/\//) %>
+                 <%= link_to item.title, url_for_menu_item(item), target: (is_external_url ? '_blank' : '_self') %>
+ 
+            </li>
+            <%end%>
+        </ul> 
+        <%= link_to "Edit", edit_admin_menu_path(menu), method: :patch %>
+        <%= button_to "Destroy this menu", admin_menu_path(menu), method: :delete %>
+            
+      </li>
+    </div>
+<% end %>
+</div>
+<p>
+    <%= link_to "New Menu", new_admin_menu_path %>
+</p>

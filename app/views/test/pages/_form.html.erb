@@ -1,3 +1,5 @@
+ <%= javascript_include_tag Ckeditor.cdn_url%>
+ 
 <%= form_with(model: page) do |form| %>
   <% if page.errors.any? %>
     <div style="color: red">
@@ -11,15 +13,16 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
-  </div>
+<div>
+  <%= form.label :title, style: "display: block" %>
+  <%= form.text_field :title, size: 78 %>
+</div>
 
-  <div>
-    <%= form.label :body, style: "display: block" %>
-    <%= form.text_area :body %>
-  </div>
+<div>
+  <%= form.label :body, style: "display: block" %>
+  <%= form.cktext_area :body %>
+</div>
+
 
   <div>
     <%= form.label :slug, style: "display: block" %>
@@ -27,6 +30,12 @@
   </div>
 
   <div>
+  <%= form.label :category_id %>
+  <%= form.select :category_id, Category.all.map { |category| [ category.name, category.id] }, style: "display: block" %>
+  </div>
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>
+
