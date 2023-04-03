@@ -19,7 +19,6 @@ Rails.application.routes.draw do
    resources :products, only: [:show]
    
    root 'pages#home'
-   get '/about', to: 'pages#show', id: Page.find_by(slug: 'about')&.id
    get '/pages/:id', to: 'pages#show', as: 'dynamic_page'
    get 'static_pages/home'
    get '/help', to: "static_pages#help"
