@@ -3,6 +3,11 @@
   class PagesController < ApplicationController
   before_action :set_page, only: %i[ show edit update destroy ]
 
+  def home
+    @page = Page.find_by(slug: 'home')
+    render action: 'show'
+  end
+  
   # GET /pages or /pages.json
   def index
     @pages = Page.all
