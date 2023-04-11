@@ -78,7 +78,7 @@
   
       # Only allow a list of trusted parameters through.
       def page_params
-        params.require(:page).permit(:title, :body, :slug, :category_id)
+        params.require(:page).permit(:title, :body, :slug, :background_image, :category_id)
       end
     end
   

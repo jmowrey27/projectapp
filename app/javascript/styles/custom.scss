@@ -1,13 +1,9 @@
 
-@import "bootstrap";
-
-
 /* universal */
 
 body {
-  
-    background-color:rgba(171, 169, 169, 0.737) ;
-    padding-top: 68px;
+    padding-top: 0px;
+    background-color:rgb(255, 255, 255) ;
   }
   
   section {
@@ -23,7 +19,7 @@ body {
   }
   
   .center h1 {
-    margin-bottom: 0px;
+    margin-bottom: 10px;
   }
   .custom-styles .product-image {
     width: 150px;
@@ -39,15 +35,15 @@ h1, h2, h3, h4, h5, h6 {
   h1 {
     font-size: 3em;
     letter-spacing: -2px;
-    margin-top: 00px;
-    margin-bottom: 0px;
+    margin-top: 100px;
+    margin-bottom: 30px;
     text-align: center;
   }
   
   h2 {
     font-size: 1.2em;
     letter-spacing: -1px;
-    margin-bottom: 0px;
+    margin-bottom: 30px;
     text-align: center;
     font-weight: normal;
     color: #777;
@@ -59,24 +55,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   /* header */
-  .header {
-    padding-bottom: 0px;
-
-  }
-// Backgground image 
-.page-background {
-  width: 100%;
-  height: 500px; /* Adjust the height according to your preference */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  box-sizing: border-box;
-}
-
-.page-body {
-  padding: 12px;
-  position: center !important;
-}
 
 #logo {
     float: left;
@@ -92,44 +70,12 @@ h1, h2, h3, h4, h5, h6 {
   #logo:hover {
     color: #fff;
     text-decoration: none;
-  } 
-
-  // navbar
-  /* Color of the links BEFORE scroll */
-.navbar-scroll .nav-link,
-.navbar-scroll .navbar-toggler-icon,
-.navbar-scroll .navbar-brand {
-  color: #fff;
-}
-
-/* Color of the links AFTER scroll */
-.navbar-scrolled .nav-link,
-.navbar-scrolled .navbar-toggler-icon,
-.navbar-scrolled .navbar-brand {
-  color: #fff;
-}
-
-/* Color of the navbar AFTER scroll */
-.navbar-scroll,
-.navbar-scrolled {
-  background-color: #cbbcb1;
-}
-
-.mask-custom {
-  backdrop-filter: blur(5px);
-  background-color: rgba(255, 255, 255, .15);
-}
-
-.navbar-brand {
-  font-size: 1.75rem;
-  letter-spacing: 3px;
-}
+  }
 
   /* footer */
 
   footer {
-    float:bottom;
-    margin-top: 0px;
+    margin-top: 45px;
     padding-top: 5px;
     border-top: 1px solid #eaeaea;
     color: #777;
@@ -148,7 +94,7 @@ h1, h2, h3, h4, h5, h6 {
 
    /* pages */
 
- 
+  
 
   
 

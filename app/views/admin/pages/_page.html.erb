@@ -1,20 +1,21 @@
- 
 <div class="page">
-<div id="<%= dom_id page %>">
-  <p>
-    <strong></strong>
-    <%= page.title %>
-  </p>
+  <div id="<%= dom_id page %>_background" class="page-background" style="background-image: url('<%= url_for(page.background_image) %>');"></div>
+  <div id="<%= dom_id page %>_content" class="page-body">
+      <p>
+        <strong></strong>
+        <%= page.title %>
+      </p>
 
-  <p>
-    <strong></strong>
-    <%= page.body.html_safe %>
-  </p>
+    <p>
+      <strong></strong>
+      <%= page.body.html_safe %>
+    </p>
 
-  <!-- <p>
-    <strong>Slug:</strong>
-    <%= url_for_page page %>
-  </p>
-  -->
-</div>
+    <!-- <p>
+      <strong>Slug:</strong>
+      <%= url_for_page page %>
+    </p>
+    -->
+    </div>
+  </div>
 </div>

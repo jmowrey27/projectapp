@@ -8,8 +8,12 @@ gem "rails", "~> 7.0.4", ">= 7.0.4.2"
 
 # bootstrap
 
-gem "sassc-rails",     "2.1.2"
-gem "bootstrap-sass",  "3.4.1"
+gem 'bootstrap', '~> 5.1' # check the latest version when you add it
+gem "sass-rails", ">= 6"
+
+
+
+
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
@@ -54,6 +58,7 @@ gem "bootsnap", require: false
 
 #devise log in
 gem 'devise'
+gem 'omniauth'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"

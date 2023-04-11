@@ -1,23 +1,74 @@
- <div style="padding-bottom: 20px;">
-  <header class= "navbar navbar-fixed-top navbar-inverse" >
+<header class="header">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top mask-custom shadow-0">
+    <div class="container">
+      <a class="navbar-brand" href="/home"><span style="color: #5e9693;">Project</span><span style="color: #5e9693;">App</span></a>
+      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+        data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto">
+          
+          <% if admin_signed_in? %>
+            <li class="nav-item">
+              <li><%= link_to "Content", admin_pages_path,  class: "nav-link"%> </li>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Categories", admin_categories_path, class: "nav-link"%> 
+            </li>
+            <li class="nav-item">
+              <%= link_to "Products", admin_products_path, class: "nav-link"%> 
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/home">Home</a>
+            </li>
+            <li class="nav-item">
+              <%= link_to 'Sign out', sign_out_path, class: "nav-link" %>
 
-      <div class="container">
-          <%= link_to image_tag("logo.jpg", alt:"sample logo", width: "100"), root_path, id: "logo" %>
-        <nav>
-          <ul class="nav navbar-nav navbar-right">
 
-            <% if admin_signed_in? %>
-              <li><%= link_to "Sign out", destroy_admin_session_path, data: { "turbo-method": :delete } %> </li>
-              <li><%= link_to "Content", admin_pages_path %> </li>
-              <li><%= link_to "Categories", admin_categories_path %> </li>
-              <li><%= link_to "Menus", admin_menus_path %> </li>
-              <li><%= link_to "Home", root_path %> </li>
-            <% else %>
-              <li><%= link_to "Our story", about_path %> </li>
-              <li><%= link_to "Shop", "#" %> </li>
-              <li><%= link_to "Log In", new_admin_session_path  %> </li>
-              
-            <% end %>
-        </nav>  
-  </header>
-</div>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <a class="nav-link" href="/about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/products">Shop</a>
+            </li>
+            <li class="nav-item">
+            <%= link_to 'Log In', new_admin_session_path, class: 'nav-link' %>
+            </li>
+          <%end%>
+        </ul>
+        <ul class="navbar-nav d-flex flex-row">
+          <li class="nav-item me-3 me-lg-0">
+            <a class="nav-link" href="#!">
+              <i class="fas fa-shopping-cart"></i>
+            </a>
+          </li>
+          <li class="nav-item me-3 me-lg-0">
+            <a class="nav-link" href="#!">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li class="nav-item me-3 me-lg-0">
+            <a class="nav-link" href="#!">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Navbar -->
+
+  <!--Section: Design Block-->
+  <section>
+    <!-- Intro -->
+
+    </div>
+    <!-- Intro -->
+  </section>
+  <!--Section: Design Block-->
+</header>

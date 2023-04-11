@@ -1,0 +1,37 @@
+<h1>Products</h1>
+
+<%= link_to 'New Product', new_admin_product_path %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Image</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.name %></td>
+        <td>
+        <div class="custom-styles">
+          <% if product.image.attached? %>
+            <%= image_tag product.image, alt: product.name, class: 'product-image' %>
+          <% else %>
+            No image available
+          <% end %>
+          </div>
+        </td>
+        <td><%= product.description %></td>
+        <td><%= product.price %></td>
+        <td>
+          <%= link_to 'Edit', edit_admin_product_path(product) %> |
+          <%= link_to 'Delete', admin_product_path(product), method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

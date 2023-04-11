@@ -18,6 +18,11 @@
   <%= form.text_field :title, size: 78 %>
 </div>
 
+  <div class="field">
+    <%= form.label :background_image %>
+    <%= form.file_field :background_image %>
+  </div>
+
 <div>
   <%= form.label :body, style: "display: block" %>
   <%= form.cktext_area :body %>
