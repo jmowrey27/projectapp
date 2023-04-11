@@ -26,7 +26,7 @@ Rails.application.routes.draw do
    get '/pages/:id', to: 'pages#show', as: 'dynamic_page'
    get 'static_pages/home'
    get '/help',      to: "static_pages#help"
-   get '/contact',   to: "static_pages#contact"
+   get '/contact',     to: 'pages#show', id: Page.find_by(slug: 'contact')&.id, as: 'contact'
    get '/:slug',     to: 'pages#show_by_slug', as: 'show_by_slug'
    get 'admin/home', to: 'pages#show', id: Page.find_by(slug: 'home')&.id
 
