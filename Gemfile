@@ -12,6 +12,10 @@ gem 'bootstrap', '~> 5.1' # check the latest version when you add it
 gem "sass-rails", ">= 6"
 
 
+gem 'will_paginate', '3.1.8'
+
+
+
 
 
 

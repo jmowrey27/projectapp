@@ -27,12 +27,15 @@ Rails.application.routes.draw do
    get 'static_pages/home'
    get '/help',      to: "static_pages#help"
    get '/contact',     to: 'pages#show', id: Page.find_by(slug: 'contact')&.id, as: 'contact'
-   get '/:slug',     to: 'pages#show_by_slug', as: 'show_by_slug'
+   get '/:slug', to: 'pages#show_by_slug', as: 'show_by_slug', constraints: ->(req) { req.path !~ /^\/products$/ }
+
    get 'admin/home', to: 'pages#show', id: Page.find_by(slug: 'home')&.id
+  #  get '/products', to: redirect('/admin/products')
+
 
    resources :categories, only: [:show, :index]
    resources :pages, only: [:show]
-   resources :products, only: [:show]
+   resources :products, only: [:show, :index]
  
  end
  
