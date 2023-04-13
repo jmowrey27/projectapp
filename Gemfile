@@ -13,6 +13,7 @@ gem "sass-rails", ">= 6"
 
 
 gem 'will_paginate', '3.1.8'
+gem 'will_paginate-bootstrap'
 
 
 
