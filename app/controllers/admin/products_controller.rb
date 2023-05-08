@@ -5,9 +5,9 @@ class Admin::ProductsController < ApplicationController
   def index
     if params[:category_id].present?
       @category = Category.find(params[:category_id])
-      @products = @category.products.includes(:variants).order(:title).page(params[:page]).per(12)
+      @products = @category.products.includes(:variants).order(:name).page(params[:page]).per(12)
     else
-      @products = Product.all.includes(:variants).order(:title).page(params[:page]).per(12)
+      @products = Product.all.includes(:variants).order(:name).page(params[:page]).per(12)
     end
   end
   
@@ -60,7 +60,7 @@ class Admin::ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:name, :image, :description, :price, variants_attributes: [:id, :title, :price, :_destroy], category_ids: [])
+    params.require(:product).permit(:name, :image, :description, :price, variants_attributes: [:id, :name, :price, :_destroy], category_ids: [])
   end
   
       
