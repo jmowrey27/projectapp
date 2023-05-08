@@ -1,9 +1,9 @@
-<%= form_with(model: [:admin, product], local: true) do |form| %>
-  <% if product.errors.any? %>
+<%= form_with(model: [:admin, @product], local: true) do |form| %>
+  <% if @product.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
       <ul>
-        <% product.errors.full_messages.each do |message| %>
+        <% @product.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
       </ul>
@@ -30,10 +30,25 @@
     <%= form.number_field :price, step: 0.01 %>
   </div> 
 
-    <div>
-  <%= form.label :category_id %>
-  <%= form.select :category_id, Category.all.map { |category| [ category.name, category.id] }, style: "display: block" %>
+ <%= form.label :category_ids, "Categories" %>
+  <%= form.collection_select :category_ids, Category.all, :id, :name, {}, { multiple: true } %>
+
+    <h3>Variants</h3>
+  <%= form.fields_for :variants do |variant_form| %>
+    <div class="variant-fields">
+      <%= variant_form.label :title %>
+      <%= variant_form.text_field :title %>
+    <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image %>
   </div>
+      <%= variant_form.label :price %>
+      <%= variant_form.number_field :price, step: 0.01 %>
+
+      <%= variant_form.check_box :_destroy %>
+      <%= variant_form.label :_destroy, "Remove Variant" %>
+    </div>
+  <% end %>
 
   <div class="actions">
     <%= form.submit %>

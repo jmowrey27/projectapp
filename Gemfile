@@ -5,15 +5,15 @@ ruby "3.2.0"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4", ">= 7.0.4.2"
-
+gem "faker", "2.21.0"
 # bootstrap
 
 gem 'bootstrap', '~> 5.1' # check the latest version when you add it
 gem "sass-rails", ">= 6"
 
 
-gem 'will_paginate', '3.1.8'
-gem 'will_paginate-bootstrap'
+gem 'kaminari', '~> 1.2', '>= 1.2.2'
+gem 'bootstrap_pagination'
 
 
 

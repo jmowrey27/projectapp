@@ -240,6 +240,7 @@ textarea.ck-editor__editable {
   background-color: #ffffffd9;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px ;
   border: none;
+
 }
 .card-body {
   width: 500px;
@@ -248,7 +249,8 @@ textarea.ck-editor__editable {
   
 }
 .card-img-top{
-  width: 150px;
-  height: 150px;
+  width: 300px;
+  height: auto;
   object-fit: cover;
 }
+

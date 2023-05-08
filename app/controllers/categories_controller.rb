@@ -1,7 +1,7 @@
 
-  class Admin::CategoriesController < ApplicationController
+class CategoriesController < ApplicationController
   before_action :set_category, only: %i[ show edit update destroy ]
-  before_action :authenticate_admin!, except: [:show]
+  before_action :authenticate_admin!, except: [:show, :index]
 
   # GET /categories or /categories.json
   def index
@@ -13,7 +13,6 @@
     @category = Category.find(params[:id])
     @products = @category.products.page(params[:page]).per(12)
   end
-  
   
 
   # GET /categories/new
@@ -42,7 +41,6 @@
 
   # PATCH/PUT /categories/1 or /categories/1.json
   def update
-    @category = Category.find(params[:id])
     respond_to do |format|
       if @category.update(category_params)
         format.html { redirect_to admin_category_url(@category), notice: "Category was successfully updated." }

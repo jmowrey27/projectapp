@@ -3,11 +3,12 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   def index
-    @products = Product.all.paginate(page: params[:page], per_page: 12) #adjest the per_page value as needed
+    @products = Product.all.page(params[:page]).per(12)
   end
+  
 
   def show
-    @product = Product.find(params[:id])
+    @product = Product.includes(:variants).find(params[:id])
   end
 
   def new
@@ -49,10 +50,12 @@ class ProductsController < ApplicationController
   def set_product
     @product = Product.find(params[:id])
   end
-
+  
   def product_params
-    params.require(:product).permit(:name, :description, :price, :image,  :category_id)
+    params.require(:product).permit(:name, :description, :price, :image, category_ids: [])
   end
+  
+  
       
       
 end

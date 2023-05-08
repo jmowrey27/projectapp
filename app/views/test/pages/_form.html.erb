@@ -29,10 +29,7 @@
     <%= form.text_field :slug %>
   </div>
 
-  <div>
-  <%= form.label :category_id %>
-  <%= form.select :category_id, Category.all.map { |category| [ category.name, category.id] }, style: "display: block" %>
-  </div>
+
 
   <div>
     <%= form.submit %>

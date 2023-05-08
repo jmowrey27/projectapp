@@ -1,4 +1,6 @@
 class Category < ApplicationRecord
-    has_many :pages
-    has_many :products
-end
+    has_many :product_categories
+    has_many :products, through: :product_categories
+    has_one_attached :image
+  end
+  

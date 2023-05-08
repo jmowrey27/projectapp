@@ -86,6 +86,8 @@ GEM
       autoprefixer-rails (>= 9.1.0)
       popper_js (>= 2.11.6, < 3)
       sassc-rails (>= 2.0.0)
+    bootstrap_pagination (1.0.2)
+      will_paginate (>= 3.0.3)
     builder (3.2.4)
     capybara (3.38.0)
       addressable
@@ -117,6 +119,8 @@ GEM
       warden (~> 1.2.3)
     erubi (1.12.0)
     execjs (2.8.1)
+    faker (2.21.0)
+      i18n (>= 1.8.11, < 2)
     ffi (1.15.5)
     formatador (1.1.0)
     globalid (1.1.0)
@@ -146,6 +150,18 @@ GEM
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
+    kaminari (1.2.2)
+      activesupport (>= 4.1.0)
+      kaminari-actionview (= 1.2.2)
+      kaminari-activerecord (= 1.2.2)
+      kaminari-core (= 1.2.2)
+    kaminari-actionview (1.2.2)
+      actionview
+      kaminari-core (= 1.2.2)
+    kaminari-activerecord (1.2.2)
+      activerecord
+      kaminari-core (= 1.2.2)
+    kaminari-core (1.2.2)
     listen (3.8.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -298,9 +314,7 @@ GEM
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
-    will_paginate (3.1.8)
-    will_paginate-bootstrap (1.0.2)
-      will_paginate (>= 3.0.3)
+    will_paginate (3.3.1)
     xpath (3.2.0)
       nokogiri (~> 1.8)
     zeitwerk (2.6.7)
@@ -311,15 +325,18 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   bootstrap (~> 5.1)
+  bootstrap_pagination
   capybara
   carrierwave
   ckeditor!
   debug
   devise
+  faker (= 2.21.0)
   guard
   guard-minitest
   importmap-rails
   jbuilder
+  kaminari (~> 1.2, >= 1.2.2)
   mini_magick
   minitest
   minitest-reporters
@@ -338,8 +355,6 @@ DEPENDENCIES
   tzinfo-data
   web-console
   webdrivers
-  will_paginate (= 3.1.8)
-  will_paginate-bootstrap
 
 RUBY VERSION
    ruby 3.2.0p0

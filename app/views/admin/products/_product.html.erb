@@ -1,18 +1,35 @@
+<% if @product.respond_to?(:image) && !@product.image.nil? %>
+  <p><%= @product.name %></p>
 
-<%= @product.image %>
-<p><%= @product.name %></p>
- 
- 
+  <p>
+    <strong>Description:</strong>
+    <%= @product.description %>
+  </p>
 
+  <p>
+    <strong>Image:</strong>
+    <%= image_tag @product.image %>
+  </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
+<% else %>
+  <p><%= @product.name %></p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-</p>
+  <p>
+    <strong>Description:</strong>
+    <%= @product.description %>
+  </p>
+<% end %>
 
-<%= link_to 'Edit', edit_admin_product_path(@product) %>
+<h2>Variants</h2>
+
+<% if @product.variants.any? %>
+  <ul>
+    <% @product.variants.each do |variant| %>
+      <li>
+        <%= variant.title %> - <%= variant.price %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No variants found for this product.</p>
+<% end %>
