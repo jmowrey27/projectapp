@@ -1,11 +1,11 @@
 
   class Admin::CategoriesController < ApplicationController
   before_action :set_category, only: %i[ show edit update destroy ]
-  before_action :authenticate_admin!, except: [:show]
+  before_action :authenticate_admin!, except: [:show, :index]
 
   # GET /categories or /categories.json
   def index
-    @categories = Category.joins(:products).select('categories.*, count(products.id) as products_count').group('categories.id').order(:title)
+    @categories = Category.joins(:products).select('categories.*, count(products.id) as products_count').group('categories.id').order(:name)
   end
 
   # GET /categories/1 or /categories/1.json

@@ -5,7 +5,7 @@ class CategoriesController < ApplicationController
 
   # GET /categories or /categories.json
   def index
-    @categories = Category.joins(:products).select('categories.*, count(products.id) as products_count').group('categories.id').order(:title)
+    @categories = Category.joins(:products).select('categories.*, count(products.id) as products_count').group('categories.id').order(:name)
   end
 
   # GET /categories/1 or /categories/1.json
