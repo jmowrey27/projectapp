@@ -22,6 +22,7 @@ module Projectapp
     config.load_defaults 7.0
   
     config.autoload_paths += %W(#{config.root}/app/helpers)
+    config.assets.enabled = true
 
     
 
