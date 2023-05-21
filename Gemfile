@@ -91,8 +91,7 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
-  gem "webdrivers"
-  gem "rails-controller-testing" 
+  gem "webdrivers" 
   gem "minitest"               
   gem "minitest-reporters"   
   gem "guard"            
@@ -102,3 +101,32 @@ end
 group :production do
   gem "pg", "1.3.5"
 end
+gem "solidus", "~> 4.0"
+gem 'dotenv-rails', groups: [:development, :test]
+gem "solidus_stripe", "~> 5.0.rc.2"
+gem "solidus_auth_devise", "~> 2.5"
+gem "solidus_frontend"
+gem "canonical-rails"
+gem "solidus_support"
+gem "truncate_html"
+gem "view_component", "~> 2.46"
+
+group :test do
+  gem "capybara-screenshot", "~> 1.0"
+  gem "database_cleaner", "~> 1.7"
+end
+
+group :development, :test do
+  gem "rspec-rails"
+  gem "rails-controller-testing", "~> 1.0.5"
+  gem "rspec-activemodel-mocks", "~> 1.1.0"
+  gem "factory_bot", ">= 4.8"
+  gem "factory_bot_rails"
+  gem "ffaker", "~> 2.13"
+  gem "rubocop", "~> 1.0"
+  gem "rubocop-performance", "~> 1.5"
+  gem "rubocop-rails", "~> 2.3"
+  gem "rubocop-rspec", "~> 2.0"
+end
+
+

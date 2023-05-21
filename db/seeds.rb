@@ -33,3 +33,6 @@ number_of_products.times do
     category: category
   )
 end
+Spree::Core::Engine.load_seed
+Spree::Auth::Engine.load_seed
+SolidusStripe::Engine.load_seed

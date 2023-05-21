@@ -7,15 +7,18 @@
     <% @products.each do |product| %>
       <div class="col-md-4 col-sm-6">
         <div class="card mb-4">
+        <%= link_to product_path(product) do %>
           <% if product.image.attached? %>
             <%= image_tag product.image, class: "card-img-top"  %>
           <% else %>
              <%= image_tag "dog shades.jpg", alt: "Placeholder image", class: "card-img-top"  %>
           <% end %>
           <div class="card-body">
+            
             <h5 class="card-title"><%= product.name %></h5>
             <p class="card-text"><%= product.description %></p>
             <p class="card-text"><%= number_to_currency(product.price) %></p>
+            <% end %>
             <%= link_to 'View', product, class: 'btn btn-primary' %>
             <%= link_to 'Edit', edit_admin_product_path(product) %> |
             <%= button_to 'Delete', admin_product_path(product), method: :delete, data: { confirm: 'Are you sure?' } %>
