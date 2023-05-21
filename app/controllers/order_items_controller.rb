@@ -3,8 +3,6 @@ class OrderItemsController < ApplicationController
        @items = current_cart.order.items
     end
 
-    def show
-    end
 
     def new
     end

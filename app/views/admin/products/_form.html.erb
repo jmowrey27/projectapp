@@ -35,6 +35,8 @@
 
     <h3>Variants</h3>
   <%= form.fields_for :variants do |variant_form| %>
+    <%= variant_form.check_box :_destroy, { checked: variant_form.object.new_record? }, "0", "1" %>
+    <%= variant_form.label :_destroy, "Add a variant" %>
     <div class="variant-fields">
       <%= variant_form.label :title %>
       <%= variant_form.text_field :title %>

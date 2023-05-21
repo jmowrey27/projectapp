@@ -1,35 +1,22 @@
-
-<div class="container">
-  <div class="row">
-    <% @products.each do |product| %>
-      <div class="col-md-4 col-sm-6">
-        <div class="card mb-4">
-          <% if product.image.attached? %>
-            <%= image_tag product.image, class: "card-img-top"  %>
-          <% else %>
-             <%= image_tag "dog shades.jpg", alt: "Placeholder image", class: "card-img-top"%>
-          <% end %>
-          <div class="card-body">
-           <%= link_to product_path(product) do %>
-            <h5 class="card-title"><%= product.name %></h5>
-           <% end %>
-            <p class="card-text"><%= product.description %></p>
-            <p class="card-text"><%= number_to_currency(product.price) %></p>
-            <%= link_to 'View', product, class: 'btn btn-primary' %>
-            <%= link_to 'Edit', edit_admin_product_path(product) %> |
-            <%= link_to 'Delete', admin_product_path(product), method: :delete, data: { confirm: 'Are you sure?' } %>
-          </div>
-        </div>
-      </div>
+<div class="products">
+  <aside>
+    <% if "products" == params[:controller] && @taxon %>
+      <%= render 'shared/search/filters', taxon: @taxon %>
+    <% else %>
+      <%= render 'shared/navigation/taxonomies', taxon: @taxon %>
     <% end %>
-  </div>
-
-  <div class="text-center">
-  <%= paginate @products  %>
-
-
-
-  </div>
-
-
-
+  </aside>
+  <section class="products_section">
+    <% if params[:keywords] %>
+      <% if @products.empty? %>
+        <h6>
+          <%= t('spree.no_products_found') %>
+        </h6>
+      <% else %>
+        <%= render 'products', products: @products, taxon: @taxon %>
+      <% end %>
+    <% else %>
+      <%= render 'products', products: @products, taxon: @taxon %>
+    <% end %>
+  </section>
+</div>

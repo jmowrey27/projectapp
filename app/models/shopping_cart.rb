@@ -26,5 +26,9 @@ class ShoppingCart
     def remove_item(id:)
      order.items.destroy(id)
     end
+
+    def items_count
+        order.items.sum(:quantity)
+    end
 end
     
