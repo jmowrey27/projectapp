@@ -6,33 +6,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-require 'faker'
 
-category_names = ['Televisions', 'Gaming', 'Home Video', 'Accessories', 'Monitors', 'Laptops']
-
-categories = category_names.map do |category_name|
-  Category.create!(name: category_name)
-end
-
-number_of_products = 50
-
-number_of_products.times do
-  product_name = Faker::Commerce.product_name
-  price = Faker::Commerce.price(range: 20..500.0).to_d
-  category = categories.sample
-  description = Faker::Lorem.sentence
-
-  product = Product.create!(
-    name: product_name,
-    description: description,
-    price: price
-  )
-
-  ProductCategory.create!(
-    product: product,
-    category: category
-  )
-end
 Spree::Core::Engine.load_seed
 Spree::Auth::Engine.load_seed
 SolidusStripe::Engine.load_seed

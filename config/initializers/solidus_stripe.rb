@@ -25,7 +25,6 @@ if ENV['SOLIDUS_STRIPE_API_KEY']
     'solidus_stripe_env_credentials',
     api_key: ENV.fetch('SOLIDUS_STRIPE_API_KEY'),
     publishable_key: ENV.fetch('SOLIDUS_STRIPE_PUBLISHABLE_KEY'),
-    test_mode: ENV.fetch('SOLIDUS_STRIPE_API_KEY').start_with?('sk_test_'),
-    
+    test_mode: ENV.fetch('SOLIDUS_STRIPE_API_KEY').start_with?('sk_test_')
   )
 end

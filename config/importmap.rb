@@ -7,3 +7,4 @@ pin "@hotwired/stimulus-loading", to: "stimulus-loading.js", preload: true
 pin_all_from "app/javascript/controllers", under: "controllers"
 pin "@stripe/stripe-js", to: "https://ga.jspm.io/npm:@stripe/stripe-js@1.53.0/dist/stripe.esm.js"
 pin "bootstrap", to: "bootstrap/dist/js/bootstrap.bundle.js"
+
