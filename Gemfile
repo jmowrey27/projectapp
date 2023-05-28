@@ -14,6 +14,7 @@ gem "sass-rails", ">= 6"
 
 gem 'kaminari', '~> 1.2', '>= 1.2.2'
 gem 'bootstrap_pagination'
+gem 'aws-sdk-s3', '~> 1.48'
 
 
 
