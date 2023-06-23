@@ -20,3 +20,4 @@ Rails.application.config.assets.precompile += %w(custom.scss)
 Rails.application.config.assets.precompile += ['solidus_starter_frontend_manifest.js']
 Rails.application.config.assets.precompile += %w( *.mp4 *.webm *.ogv )
 Rails.application.config.assets.precompile += %w( *.png *.jpg *.jpeg *.gif *.svg *.ico *.eot *.ttf *.woff *.woff2 *.otf )
+Rails.application.config.assets.precompile += %w( tree.jpg )
