@@ -253,4 +253,13 @@ textarea.ck-editor__editable {
   height: auto;
   object-fit: cover;
 }
+/* carosel */
+.carousel-image {
+  width: 100% !important;
+  height: 500px !important; /* Adjust the height according to your preference */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
 
+}

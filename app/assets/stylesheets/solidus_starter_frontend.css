@@ -13,8 +13,8 @@
  *= require spree/frontend/solidus_stripe
 */
 .hero {
-    background: dark;
-    color: bright;
+    background: black;
+    color: white;
     padding: 10px;
     
 }
@@ -39,9 +39,49 @@
     font-family: 'montserrat', sans-serif;
     padding-top: 10px;
 }
+.hero-container {
+    position: relative;
+  }
 
+.hero-container h1 {
+    position: absolute !important;
+    top: 50% !important; /* Adjust these values to move the title */
+    left: 50% !important; 
+    transform: translate(-50%, -50%) !important; /* This is to center the title */
+    z-index: 1 !important; /* This will make sure the title stays on top */
+  }
+.hero-container .shop-link {
+    position: absolute !important;
+    top: 70% !important; /* Adjust these values to move the title */
+    left: 50% !important; 
+    transform: translate(-50%, -50%) !important; /* This is to center the title */
+    z-index: 1 !important; /* This will make sure the title stays on top */
+  }
 .top-bar .logo img {
     width: 200px;
     
 }
+
+/* carosel */
+.carousel-image {
+    width: 100% !important;
+    height: 800px !important; /* Adjust the height according to your preference */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+  
+  }
+
+  .w-100 {
+    width: 100% !important;
+    height: 400px !important; /* Adjust the height according to your preference */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    object-fit: cover;
+  
+  }
+
 

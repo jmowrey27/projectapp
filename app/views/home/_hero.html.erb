@@ -1,14 +1,54 @@
-<section class="hero">
-  <div class="hero__container">
-  <%= image_tag('snowboarding_home.jpg') %>
-    <div class="hero__message">
-      <h1 class="hero-title">
-        Altitude Adjustment: Conquer the Slopes with Style and Speed!
-      </h1>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-      <p class="subtitle">
-        <i>"Snowsports are a dance with nature, where the mountain sets the rhythm and your board finds the melody."</i> - John Mowrey
-      </p>
+<%
+=begin%>
+ <section class="hero">
+  <div class="hero__container"> 
+<%
+=end%>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <%= image_tag('R (1).jpg', class: 'd-block carousel-image', alt: 'First slide') %>
+      <h1>John Mowrey's pick for top snowboard website</h1>
     </div>
-  </div>
-</section>
+    <div class="carousel-item">
+      <%= image_tag('fix.jpg', class: 'd-block carousel-image', alt: 'Second slide') %>
+      <h1>Hand crafted in the mountains of New Mexico </h1>
+    </div>
+    <div class="carousel-item">
+      <%= image_tag('snowboard-at-dusk.jpg', class: 'd-block carousel-image', alt: 'Third slide') %>
+      <h1> Hundreds of new and used boards available </h1>
+    <div class="shop-link">
+      <%= link_to 'Shop Now', products_path, class: '"btn btn-dark"', role: 'button', 'aria-pressed': 'true' %>
+    </div>
+    </div>
+
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+  
+</div>
+
+
+    
+    </div>
+  <%
+=begin%>
+ </div>
+</section>  
+<%
+=end%>
+

@@ -1,7 +1,17 @@
-<%= render 'hero' %>
 
-<article>
+
+
+
+
+ 
+
+<%= render 'hero' %>
+ <article>
   <% cache(cache_key_for_products) do %>
-    <%= render 'products/products', products: @products %>
+    <%= render 'products/products', products: @products.limit(4) %>
   <% end %>
-</article>
+</article> 
+<video class="w-100" autoplay loop muted>
+  <source src="/videos/MLJI1170.MP4" type="video/mp4"  />
+</video>
+
